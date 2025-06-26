@@ -13,7 +13,7 @@ SceneManager.current_scene = nil
 EventManager:add_handle_object(SceneManager)
 
 function SceneManager:init()
-	self.current_scene = LogoScene
+	self.current_scene = MainScene
 	self.current_scene:init()
 end
 
@@ -31,3 +31,4 @@ end
 function SceneManager:draw()
 	self.current_scene:draw()
 end
+

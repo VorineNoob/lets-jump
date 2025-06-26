@@ -26,6 +26,8 @@ function Graph(type, mode, rgba, draw_args)
 			call(love.graphics.line, self.draw_args)
 		elseif self.graph_type == "arc" then
 			call(love.grahpics.arc, self.mode .. self.draw_args)
+		elseif self.graph_type == "triangle" then
+			call(love.graphics.triangle, self.mode .. self.draw_args)
 		end
 	end
 

@@ -24,7 +24,12 @@ function Scene()
 	function object:draw()
 		print("Scene:draw() was run.")
 		for i, v in ipairs(self.sprites) do
-			v:draw()
+			if v.removed then
+				table.remove(self.sprites, i)
+				v = nil
+			else
+				v:draw()
+			end
 		end
 		for i, v in ipairs(self.texts) do
 			v:draw()
