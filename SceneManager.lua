@@ -13,7 +13,7 @@ SceneManager.current_scene = nil
 EventManager:add_handle_object(SceneManager)
 
 function SceneManager:init()
-	self.current_scene = GameNameScene
+	self.current_scene = LogoScene
 	self.current_scene:init()
 end
 

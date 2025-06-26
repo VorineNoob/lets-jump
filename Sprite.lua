@@ -16,6 +16,9 @@ function Sprite(path, x, y)
 	function object:update(dt) end
 	function object:draw()
 		print("Sprite:draw() is running!")
+
+		love.graphics.setColor(1, 1, 1, 1) 									-- 注意这里，当时就是因为这里我调试了好久(在 GameNameScene 那里 Alpha 设置成 0 了)
+
 		if object.image then print("A sprite is not nil!") end
 		love.graphics.draw(self.image, self.x, self.y)
 	end
@@ -23,7 +26,7 @@ function Sprite(path, x, y)
 	function object:move(ox, oy)
 		print("A sprite is moving!")
 		self.x = self.x + ox
-		self.x = self.y + oy
+		self.y = self.y + oy
 	end
 
 	return object

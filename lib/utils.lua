@@ -23,3 +23,16 @@ function get_type(object)
 	end
 end
 
+-- 根据参数表调用函数
+function call(func, args)
+
+	local unpack_func = table.unpack and table.unpack or unpack
+
+	if type(func) == "function" and args then
+		func(unpack_func(args))
+	else
+		error("args is empty!")
+	end
+end
+
+

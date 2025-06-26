@@ -38,8 +38,8 @@ function GameNameScene:init()
 		-- 此处，淡出
 		elseif status == "down" then
 			-- 停留一会
-			if tmp < 1 then tmp = tmp + 1 * dt end
-			if tmp >= 1 then
+			if tmp < 1 then tmp = tmp + dt
+			else
 				if self.A > 0 then
 					self.A = self.A - SPEED * dt
 				else
