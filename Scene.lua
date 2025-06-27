@@ -22,17 +22,22 @@ function Scene()
 
 	-- 绘制场景
 	function object:draw()
-		print("Scene:draw() was run.")
+		-- print("Scene:draw() was run.")
 		for i, v in ipairs(self.sprites) do
-			if v.removed then
-				table.remove(self.sprites, i)
-				v = nil
-			else
+			if not v.removed then
 				v:draw()
 			end
+			-- if v.removed then
+			-- 	table.remove(self.sprites, i)
+			-- 	v = nil
+			-- else
+			-- 	v:draw()
+			-- end
 		end
 		for i, v in ipairs(self.texts) do
-			v:draw()
+			if not v.removed then
+				v:draw()
+			end
 		end
 
 		if self.background then self.background:draw() end
@@ -87,7 +92,7 @@ function Scene()
 
 	-- 进行每帧的事件判断
 	function object:update(dt)
-		print("Scene:update() was run.")
+		-- print("Scene:update() was run.")
 		for i, v in ipairs(self.update_functions) do
 			v(dt)
 		end

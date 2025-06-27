@@ -21,12 +21,14 @@ function Barrier(x, y, rgba, side)
 
 	function object:update(dt)
 		-- 移动
-		self.y = self.y + MOVE_SPEED * dt
+		-- self.y = self.y + MOVE_SPEED * dt
+		self.y = self.y + MainScene.player.oy * dt
 
 		-- 计算是否越界
 		if self.y - SIDE_LENGTH / 2 >= SCREEN_HEIGHT then
 			self.removed = true
-			return
+		else
+			self.removed = false
 		end
 
 		self.x1 = self.x

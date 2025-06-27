@@ -14,10 +14,10 @@ function Graph(type, mode, rgba, draw_args)
 
 	function object:draw()
 
-		print("Graph:draw(): Calling setColor..")
+		-- print("Graph:draw(): Calling setColor..")
 		call(love.graphics.setColor, self.rgba)
 
-		print("Graph:draw(): drawing...")
+		-- print("Graph:draw(): drawing...")
 		if self.graph_type == "rect" then
 			call(love.graphics.rectangle, self.mode .. self.draw_args)
 		elseif self.graph_type == "circle" then

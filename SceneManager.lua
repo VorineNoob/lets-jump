@@ -18,7 +18,7 @@ function SceneManager:init()
 end
 
 function SceneManager:update(dt)
-	print(string.format("SceneManager:update(dt): calling %s:update(dt)", get_type(self.current_scene)))
+	-- print(string.format("SceneManager:update(dt): calling %s:update(dt)", get_type(self.current_scene)))
 
 	self.current_scene:update(dt)
 	if self.current_scene.is_next_scene then

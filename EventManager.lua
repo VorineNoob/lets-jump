@@ -8,7 +8,7 @@ EventManager.game_objects = {}                                      -- 需要接
 
 -- 运行初始化函数
 function EventManager:init()
-	print("EventManager:init() was run.")
+	-- print("EventManager:init() was run.")
 	for i, v in ipairs(self.game_objects) do
 		v:init()
 	end
@@ -27,10 +27,10 @@ end
 
 -- 运行更新函数
 function EventManager:update(dt)
-	print("EventManager:update(dt) was run.")
+	-- print("EventManager:update(dt) was run.")
 	for i, v in ipairs(self.game_objects) do
 		if v.update then
-			print(string.format("EventManager:update(): calling %s:update().", get_type(v)))
+			-- print(string.format("EventManager:update(): calling %s:update().", get_type(v)))
 			v:update(dt)
 		end
 	end
@@ -38,7 +38,7 @@ end
 
 -- 运行更新函数
 function EventManager:draw()
-	print("EventManager:draw() was run.")
+	-- print("EventManager:draw() was run.")
 	for i, v in ipairs(self.game_objects) do
 		v:draw()
 	end
@@ -46,7 +46,7 @@ end
 
 -- 添加对象
 function EventManager:add_handle_object(object)
-	print(string.format("EventManager:add_handle_object(%s) was run.", get_type(object)))
+	-- print(string.format("EventManager:add_handle_object(%s) was run.", get_type(object)))
 	if type(object) == "table" then
 		table.insert(self.game_objects, object)
 		return true
