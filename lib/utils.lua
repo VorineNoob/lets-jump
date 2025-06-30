@@ -28,11 +28,11 @@ function call(func, args)
 
 	local unpack_func = table.unpack and table.unpack or unpack
 
-	if type(func) == "function" and args then
-		func(unpack_func(args))
-	else
-		error("args is empty!")
-	end
+	-- if type(func) == "function" and args then
+	if type(func) == "function" then func(unpack_func(args)) end
+	-- else
+	-- 	error("args is empty!")
+	-- end
 end
 
 

@@ -13,8 +13,17 @@ SceneManager.current_scene = nil
 EventManager:add_handle_object(SceneManager)
 
 function SceneManager:init()
-	self.current_scene = MainScene
+	-- self.current_scene = MainScene
 	self.current_scene:init()
+end
+
+function SceneManager:set_current_scene(scene)
+	if get_type(scene) == "Scene" then
+		self.current_scene = scene
+		print("set current_scene")
+	else
+		error("SceneManager:set_current_scene(): arg isnt Scene!")
+	end
 end
 
 function SceneManager:update(dt)
